@@ -21,7 +21,7 @@
     (post-json
       endpoint
       json-data
-      (fn [err response body]
+      (fn [err _ _]
         (if err
           (util/log :error (str "Something went wrong!" err))
           (util/log :success
