@@ -1,10 +1,10 @@
 var http = require('http');
 console.log('Test server');
 
-http.createServer(function (req, res) {
+http.createServer((req, res) => {
     if (req.method == 'POST') {
-        req.on('data', function(data) {
+        req.on('data', data => {
             console.log(data.toString());
-        }).on('end', function() { res.end() })
+        }).on('end', () => { res.end() })
     }
 }).listen(9999);
