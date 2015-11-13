@@ -20,12 +20,12 @@
 
            Must receive an event type symbol and data object
            representing the payload data. If no key is found, raises an error."
-  (fn [event data] event))
+  (fn [data] (:type data)))
 
 (defmethod validate-incoming-event :CHANNEL_STATUS_CHANGE
-  [event data]
-  (validate-schema model/channel-status-change data))
+  [data]
+  (validate-schema model/channel-status-change (:payload data)))
 
 (defmethod validate-incoming-event :default
-  [event data]
-  (util/key-not-found event))
+  [data]
+  (util/key-not-found (:payload data)))
