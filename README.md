@@ -10,7 +10,7 @@ It receives an event type and the payload data for the event. Then, it validates
 ## Usage
 
 
-TODO: Insert NPM package dependency
+Insert NPM package dependency `"thundera-event-register-module": "git+ssh://git@github.com:apontador/thundera-event-register-module.git"`
 
 `const eventRegisterModule = require('thundera-event-register-module');`
 
@@ -47,7 +47,7 @@ If you want to test the JS functionality of this module, you should do this:
 - Install nodemon via `npm install -g nodemon`
 - Open two terminals, run `nodemon server.js` and `nodemon thundera.js`
 - Start `npm run watch`
-- Set the `endpoint` variable in api.cljs TODO: Add file link to `http://localhost:9999`
+- Set the `endpoint` variable in `src/thundera_event_register/api.cljs` to `http://localhost:9999`
 
 The `thundera.js` file imports the Node module and register a fake event. You should see the event JSON in both client and server terminals.
 

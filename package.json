@@ -5,7 +5,7 @@
   "main": "release/thundera-event-register.js",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/apontador/thundera-event-register-module"
   },
   "directories": {
     "doc": "docs",
@@ -21,10 +21,7 @@
     "watch": "./scripts/watch.sh",
     "build": "./scripts/build.sh",
     "generate-docs": "lein codox",
-    "release": "./scripts/release.sh",
-    "release-patch": "git checkout master && npm run release; git commit -a -m 'Build release/'; npm version patch && git push origin master --tags && npm publish --access=public",
-    "release-minor": "git checkout master && npm run release; git commit -a -m 'Build release/'; npm version minor && git push origin master --tags && npm publish --access=public",
-    "release-major": "git checkout master && npm run release; git commit -a -m 'Build release/'; npm version major && git push origin master --tags && npm publish --access=public"
+    "release": "./scripts/release.sh"
   },
   "keywords": [],
   "author": "Andre Loureiro"
