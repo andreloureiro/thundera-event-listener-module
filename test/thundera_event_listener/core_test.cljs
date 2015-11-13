@@ -1,5 +1,5 @@
 (ns thundera-event-listener.core-test
-  (:require [cljs.test :refer-macros [deftest is testing run-tests use-fixtures]]
+  (:require [cljs.test :refer-macros [deftest is testing run-tests async]]
             [schema.core :as s :include-macros true]
             [thundera-event-listener.api :as api]
             [thundera-event-listener.core :as core]
@@ -16,6 +16,8 @@
                 :status "waiting"
                 :attendant "sendy"
                 :channelCreatedAt "Tue Nov 10 2015 09:51:24 GMT-0200 (BRST)"})
+(def type-input-mock "CHANNEL_STATUS_CHANGE")
+(def data-input-mock (clj->js data-mock))
 
 
 ;;- API
@@ -42,13 +44,10 @@
   (testing "validate-schema"
     (is (= (events/validate-schema schema-mock data-mock) true)))
 
-  (testing "keyword->string"
-    (is (= (util/symbol->string :CHANNEL_STATUS_CHANGE)
-           "CHANNEL_STATUS_CHANGE")))
-
   (testing "validate-incoming-event"
-    (is (= (events/validate-incoming-event type-mock data-mock)
-           true))))
+    (let [event-mock {:type type-mock :payload data-mock}]
+      (is (= (events/validate-incoming-event event-mock)
+             true)))))
 
 
 ;;- Model
@@ -56,18 +55,17 @@
 (deftest model-ns
 
   (testing "make-event-register"
-    (let [
-          json-mock (clj->js {:type type-mock :payload data-mock})
-          event-register-mock (model/make-event-register type-mock data-mock)]
-      (is (= event-register-mock json-mock)))))
+    (let [event-register-mock (model/make-event-register type-mock data-mock)]
+      (is (= event-register-mock {:type type-mock :payload data-mock})))))
 
 
 ;;- Util
 
 (deftest util-ns
 
-  (testing "keyword->string"
-    (is (= (util/symbol->string :CHANNEL_STATUS_CHANGE) "CHANNEL_STATUS_CHANGE")))
+  (testing "symbol->string"
+    (is (= (util/symbol->string :CHANNEL_STATUS_CHANGE)
+           "CHANNEL_STATUS_CHANGE")))
 
   (testing "key-not-found")
 
