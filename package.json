@@ -1,0 +1,31 @@
+{
+  "name": "thundera-event-listener-module",
+  "version": "0.1.0",
+  "description": "A Node module to listen and register events created on Resolve applications",
+  "main": "release/thundera-event-listener.js",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "dependencies": {
+    "request": "^2.65.0",
+    "ws": "^0.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "lein npm install; npm run watch",
+    "watch": "./scripts/watch.sh",
+    "build": "./scripts/build.sh",
+    "generate-docs": "lein codox",
+    "release": "./scripts/release.sh",
+    "release-patch": "git checkout master && npm run release; git commit -a -m 'Build release/'; npm version patch && git push origin master --tags && npm publish --access=public",
+    "release-minor": "git checkout master && npm run release; git commit -a -m 'Build release/'; npm version minor && git push origin master --tags && npm publish --access=public",
+    "release-major": "git checkout master && npm run release; git commit -a -m 'Build release/'; npm version major && git push origin master --tags && npm publish --access=public"
+  },
+  "keywords": [],
+  "author": "Andre Loureiro"
+}

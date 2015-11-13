@@ -1,0 +1,15 @@
+# Editor
+.idea
+
+# Project & etc
+.cljs_node_repl
+.cljs_rhino_repl
+.lein-failures
+figwheel_server.log
+thundera-event-listener.iml
+node_modules
+
+# Generated
+out
+release
+target
