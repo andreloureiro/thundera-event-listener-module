@@ -3,8 +3,8 @@
 (println "-> Building Thundera...")
 
 b/build "src"
-{:main 'thundera-event-listener.core
- :output-to "out/thundera-event-listener.js"
+{:main 'thundera-event-register.core
+ :output-to "out/thundera-event-register.js"
  :output-dir "out"
  :verbose true
  :optimizations :simple

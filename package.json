@@ -1,8 +1,8 @@
 {
-  "name": "thundera-event-listener-module",
+  "name": "thundera-event-register-module",
   "version": "0.1.0",
-  "description": "A Node module to listen and register events created on Resolve applications",
-  "main": "release/thundera-event-listener.js",
+  "description": "A Node module to register events created on Resolve applications",
+  "main": "release/thundera-event-register.js",
   "repository": {
     "type": "git",
     "url": ""

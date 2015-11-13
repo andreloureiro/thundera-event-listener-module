@@ -1,6 +1,5 @@
-(ns thundera-event-listener.core
-  "A Node module to listen and register events created on Resolve
-  applications
+(ns thundera-event-register.core
+  "A Node module to register events created on Resolve applications
 
   This module has only one public method, the `registerEvent`.
 
@@ -11,9 +10,9 @@
   Author: Andre Loureiro"
   (:require [cljs.nodejs :as node]
             [schema.core :as s :include-macros true]
-            [thundera-event-listener.events :as events]
-            [thundera-event-listener.model :as model]
-            [thundera-event-listener.api :as api]))
+            [thundera-event-register.events :as events]
+            [thundera-event-register.model :as model]
+            [thundera-event-register.api :as api]))
 
 (node/enable-util-print!)
 

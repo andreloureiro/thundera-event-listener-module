@@ -4,7 +4,8 @@
 
 (let [start (System/nanoTime)]
   (b/build "src"
-           {:output-to "release/thundera-event-listener.js"
+           {:main 'thundera-event-register.core
+            :output-to "release/thundera-event-register.js"
             :output-dir "release"
             :optimizations :simple
             :target :nodejs

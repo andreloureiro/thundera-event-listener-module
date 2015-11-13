@@ -1,11 +1,11 @@
-(ns thundera-event-listener.core-test
+(ns thundera-event-register.core-test
   (:require [cljs.test :refer-macros [deftest is testing run-tests async]]
             [schema.core :as s :include-macros true]
-            [thundera-event-listener.api :as api]
-            [thundera-event-listener.core :as core]
-            [thundera-event-listener.events :as events]
-            [thundera-event-listener.model :as model]
-            [thundera-event-listener.util :as util]))
+            [thundera-event-register.api :as api]
+            [thundera-event-register.core :as core]
+            [thundera-event-register.events :as events]
+            [thundera-event-register.model :as model]
+            [thundera-event-register.util :as util]))
 
 (def schema-mock {:id s/Str
                   :status s/Str
@@ -16,8 +16,6 @@
                 :status "waiting"
                 :attendant "sendy"
                 :channelCreatedAt "Tue Nov 10 2015 09:51:24 GMT-0200 (BRST)"})
-(def type-input-mock "CHANNEL_STATUS_CHANGE")
-(def data-input-mock (clj->js data-mock))
 
 
 ;;- API

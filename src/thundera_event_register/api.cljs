@@ -1,8 +1,8 @@
-(ns thundera-event-listener.api
+(ns thundera-event-register.api
   (:require [cljs-http.client :as http]
             [cljs.core.async :refer []]
             [cljs.nodejs :as node]
-            [thundera-event-listener.util :as util]))
+            [thundera-event-register.util :as util]))
 
 ;; If you're just testing using the simple Node server on ./node-test
 ;; then you should point the `endpoint` variable to http://localhost:9999

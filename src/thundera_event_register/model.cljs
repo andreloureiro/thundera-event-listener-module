@@ -1,4 +1,4 @@
-(ns thundera-event-listener.model
+(ns thundera-event-register.model
   (:require [schema.core :as s :include-macros true]))
 
 (def channel-status-change

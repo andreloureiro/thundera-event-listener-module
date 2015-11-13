@@ -1,7 +1,6 @@
-(ns thundera-event-listener.events
-  (:require [thundera-event-listener.model :as model]
-            [thundera-event-listener.util :as util]
-            [clojure.string :as string]
+(ns thundera-event-register.events
+  (:require [thundera-event-register.model :as model]
+            [thundera-event-register.util :as util]
             [schema.core :as s]))
 
 (defn validate-schema

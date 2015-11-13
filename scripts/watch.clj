@@ -3,10 +3,10 @@
 (println "-> Watching Thundera...")
 
 (b/watch "src"
-         {:main 'thundera-event-listener.core
-          :output-to "out/thundera-event-listener.js"
+         {:main 'thundera-event-register.core
+          :output-to "out/thundera-event-register.js"
           :output-dir "out"
-          :source-map "out/thundera-event-listener.js.map"
+          :source-map "out/thundera-event-register.js.map"
           :optimizations :simple
           :cache-analysis true
           :target :nodejs

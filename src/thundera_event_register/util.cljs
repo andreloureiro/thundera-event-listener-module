@@ -1,4 +1,4 @@
-(ns thundera-event-listener.util
+(ns thundera-event-register.util
   (:require [clojure.string :as string]))
 
 (defn symbol->string

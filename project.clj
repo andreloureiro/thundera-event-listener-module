@@ -1,6 +1,6 @@
-(defproject thundera-event-listener "0.1.0-SNAPSHOT"
+(defproject thundera-event-register "0.1.0-SNAPSHOT"
   :description "Event listener for Resolve Events API"
-  :main thundera-event-listener.core
+  :main thundera-event-register.core
   :dependencies [[cljs-http "0.1.37"]
                  [org.clojure/clojure "1.7.0"]
                  [org.clojure/clojurescript "1.7.170"]
